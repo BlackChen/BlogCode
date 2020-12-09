@@ -5,7 +5,7 @@ name: CI Hexo Blog Deploy LTS
 on: 
   push:
     branches:
-      - main
+      - master
 
 jobs:
   Deploy-Pages: 
@@ -50,7 +50,7 @@ jobs:
       run: |  
         git clone https://${Github_Pages} .github_pages
         cd .github_pages
-        git checkout main
+        git checkout master
         cd ../
         mv .github_pages/.git/ ./public/
         cd ./public/
