@@ -5,7 +5,7 @@
 # Site
 title: BlackChen'Blog
 subtitle: '心之所向,素履以往.'
-description: ''
+description: 'Do or not do is an attitude, do not do well is a kind of ability'
 keywords:
 author: 'BlackChen'
 language: zh-Hans
@@ -88,7 +88,12 @@ updated_option: 'mtime'
 ## Set per_page to 0 to disable pagination
 per_page: 10
 pagination_dir: page
-
+# Local Search本地搜索
+search:
+path: search.xml
+field: post
+format: html
+limit: 1000
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
