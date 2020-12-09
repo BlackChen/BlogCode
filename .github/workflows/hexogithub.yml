@@ -48,7 +48,7 @@ jobs:
         Github_Pages: github.com/BlackChen/BlackChen.github.io
         Github_Token: ${{ secrets.token_GithubAPI }}
       run: |  
-        git clone https://${Github_Pages} .github_pages
+        git clone https://${Github_Pages}.github_pages
         cd .github_pages
         git checkout master
         cd ../
