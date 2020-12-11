@@ -43,4 +43,4 @@ before_install:
   - cp .travis/ssh_config ~/.ssh/config
   # 配置 git 替换为自己的信息
   - git config --global user.name 'BlackChen'
-  - git config --global user.email 1414925741@qq.com
+  - git config --global user.email blackchen@best-developer.cn
