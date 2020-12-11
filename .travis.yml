@@ -1,25 +1,17 @@
-# 配置语言及响应版本
 language: node_js
 node_js:
-  - lts/*
-# 项目所在分支
+- lts/*
 branches:
   only:
-    - main
-# 将 node_modules 缓存起来，这样可以节省部署的时间
+  - main
 cache:
   directories:
-    - node_modules
-
-# 安装依赖
+  - node_modules
 install:
-  - npm install hexo-cli -g
-  - npm install
-
-# 部署的命令
+- npm install hexo-cli -g
+- npm install
 script:
-  - npm run deploy  # hexo clean && hexo g -d
-
+- npm run deploy
 deploy:
   provider: pages
   local_dir: dist
@@ -30,17 +22,14 @@ deploy:
   skip_cleanup: true
   keep_history: true
   committer_from_gh: true
-# 配置环境
 before_install:
-  # 生成的解密信息
-  - openssl aes-256-cbc -K $encrypted_f217180e22ee_key -iv $encrypted_f217180e22ee_iv
-    -in id_rsa.enc -out id_rsa -d
-  # 改变文件权限
-  - chmod 600 ~/.ssh/id_rsa
-  # 配置 ssh
-  - eval $(ssh-agent)
-  - ssh-add ~/.ssh/id_rsa
-  - cp .travis/ssh_config ~/.ssh/config
-  # 配置 git 替换为自己的信息
-  - git config --global user.name 'BlackChen'
-  - git config --global user.email blackchen@best-developer.cn
+- openssl aes-256-cbc -K $encrypted_e0d58fed9be7_key -iv $encrypted_e0d58fed9be7_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_f217180e22ee_key -iv $encrypted_f217180e22ee_iv
+  -in id_rsa.enc -out id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name 'BlackChen'
+- git config --global user.email blackchen@best-developer.cn
