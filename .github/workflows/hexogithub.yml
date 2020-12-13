@@ -35,7 +35,7 @@ jobs:
      - name: Hexo deploy
        run: |
          hexo clean
-         hexo g
-         hexo d
+         hexo generate
+         hexo deploy
 
 
