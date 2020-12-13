@@ -29,7 +29,7 @@ jobs:
       # Deploy hexo blog website.
       - name: Deploy # step4
         id: deploy
-        uses: sma11black/hexo-action@v1.0.0 # deppwang/hexo-aciton@v1.0.1 ERROR Try running: 'npm install hexo --save'
+        uses: deppwang/hexo-aciton@v1.0.1  # sma11black/hexo-action@v1.0.0 ERROR Try running: 'npm install hexo --save'
         with:
           deploy_key: ${{ secrets.HEXO_DEPLOY_PRI }}
           user_name: BlackChen
