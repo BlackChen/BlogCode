@@ -14,7 +14,7 @@ M1芯片到底好在哪里？
 Intel X86基于CISC，M1芯片基于RISC。
 什么是CISC和RISC？咱用比较通俗（雾）的语言说一下：
 
-###1、CISC
+### 1、CISC
 即Complex Instruction Set Computer——复杂指令系统计算机
 - 典型范例：
 Intel酷睿
@@ -24,7 +24,7 @@ AMD锐龙
 
 比如有一些指令是“消防员”，他们去灭火很专业，但缺点是如果交通堵塞，消防员就无能为力，必须得派交警过去，所以CISC的特点是“专事专办”。那你该问了，要是着火的房子太多消防员管不过来怎么办？抱歉，只能一个一个来，交警也只能干看着；
 
-###2、RISC
+### 2、RISC
 即Reduced Instruction Set Computer——精简指令集计算机。
 - 典型范例：
 高通骁龙
