@@ -1,0 +1,79 @@
+# workflow name
+name: CI Hexo Blog Deploy LTS
+
+# master branch on push, auto run
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy-Pages: 
+    name: Deploy Hexo Public To Pages
+    runs-on: ubuntu-latest 
+        
+    steps:
+    # check it to your workflow can access it
+    # from: https://github.com/actions/checkout
+    - name: Checkout Repository master branch
+      uses: actions/checkout@main 
+      
+    # from: https://github.com/actions/setup-node  
+    - name: Setup Node.js 12.x 
+      uses: actions/setup-node@master
+      with:
+        node-version: "12.x"
+    
+    - name: Setup Git Infomation
+      run: | 
+        git config --global user.name 'BlackChen' 
+        git config --global user.email 'blackchen@best-developer.cn'  
+ 
+    - name: Get Latest Commit Message 
+      run: |
+        git log --pretty=format:"%s from Github Actions at `date +"%Y-%m-%d %H:%M:%S"`" --date=short -n 1  > commit-message.log
+        
+    - name: Setup Hexo Dependencies
+      run: |
+        npm install hexo-cli -g
+        npm install
+        
+    - name: Generate public files
+      run: |
+        hexo clean
+        hexo generate 
+        
+    - name: Deploy To Github Pages 
+      env:
+        Github_Pages: github.com/BlackChen/BlackChen.github.io
+        Github_Token: ${{ secrets.HEXO_DEPLOY_PRI }}
+      run: |
+        hexo d
+      
+#       run: |  
+#         git clone https://${Github_Pages} .github_pages
+#         cd .github_pages
+#         git checkout master
+#         cd ../
+#         mv .github_pages/.git/ ./public/
+#         cd ./public/
+#         git add .
+#         git commit -F ../commit-message.log
+#         git push --force --quiet "https://${Github_Token}@${Github_Pages}" master:master
+
+#     - name: Deploy To Coding Pages 
+#       env:
+#         Coding_Pages: e.coding.net/用户名/用户名.coding.me.git
+#         Coding_Token: ${{ secrets.token_CodingAPI }}
+#         Coding_Username: ${{ secrets.Username_Coding }}
+#       run: |
+#         git clone https://${Coding_Username}:${Coding_Token}@${Coding_Pages} .coding_pages
+#         cd .coding_pages
+#         git checkout master
+#         cd ../
+#         rm -r ./public/.git/
+#         mv .coding_pages/.git/ ./public/
+#         cd ./public/
+#         git add .
+#         git commit -F ../commit-message.log
+#         git push --force --quiet "https://${Coding_Username}:${Coding_Token}@${Coding_Pages}" master:master
