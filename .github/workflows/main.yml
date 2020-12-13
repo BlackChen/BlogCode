@@ -44,11 +44,12 @@ jobs:
         hexo generate 
         
     - name: Deploy To Github Pages 
+      env:
+        Github_Pages: github.com/BlackChen/BlackChen.github.io
+        Github_Token: ${{ secrets.HEXO_DEPLOY_PRI }}
       run: |
         hexo d
-#       env:
-#         Github_Pages: github.com/BlackChen/BlackChen.github.io
-#         Github_Token: ${{ secrets.HEXO_DEPLOY_PRI }}
+      
 #       run: |  
 #         git clone https://${Github_Pages} .github_pages
 #         cd .github_pages
