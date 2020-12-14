@@ -363,7 +363,7 @@
         <div class="post-tags">
           {% for tag in post.tags %}
             {#    修改文章底部的#号的标签，改为图标        #}
-            <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-tag"> {{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-tag"></i> {{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}
