@@ -1,7 +1,11 @@
 ---
 title: 关于苹果M1和Intel等芯片的区别
 date: 2020-12-13 18:31:38
-tags: M1 Intel X86 ARM
+tags: 
+    - M1 
+    - Intel 
+    - X86 
+    - ARM
 top: 2
 ---
 

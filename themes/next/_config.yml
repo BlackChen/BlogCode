@@ -84,23 +84,17 @@ index_with_subtitle: false
 
 
 # ---------------------------------------------------------------
-# Menu Settings
+# TODO: Menu Settings
 # ---------------------------------------------------------------
-
-# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
-# Usage: `Key: /link/ || icon`
-# Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
-# Value before `||` delimeter is the target link.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  #about: /about/ || user
+  about: /about/ || user
   #tags: /tags/ || tags
-  #categories: /categories/ || th
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -194,7 +188,7 @@ sidebar:
   # Back to top in sidebar (only for Pisces | Gemini).
   b2t: false
 
-  # Scroll percent label in b2t button.
+  # 浏览页面显示当前浏览进度
   scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
@@ -214,11 +208,10 @@ save_scroll: false
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
 
-# Automatically Excerpt. Not recommend.
-# Please use <!-- more --> in the post to control excerpt accurately.
+# TODO: 修改 阅读全文 前显示文字数量即位置 或者在文章中任意位置添加<!-- more -->
 auto_excerpt:
-  enable: false
-  length: 150
+  enable: true
+  length: 168
 
 # Post meta display settings
 post_meta:
@@ -684,8 +677,8 @@ motion:
 # Fancybox
 fancybox: true
 
-# Progress bar in the top during page loading.
-pace: false
+# 页面顶部加载条
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
